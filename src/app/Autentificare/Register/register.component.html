@@ -1,0 +1,52 @@
+<h1>REGISTER</h1>
+<div id="register">
+  <form (ngSubmit)="onSubmit(nameInput.value, emailInput.value,  passwordInput.value)" #singUpForm="ngForm">
+    <div ngModelGroup="userData">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput
+               ngModel
+               name="name"
+               required
+               type="text"
+               #nameInput="ngModel">
+      </mat-form-field>
+      <div class="error" [class.hide]="nameInput.untouched || nameInput.valid">
+        Name is required!
+      </div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email"
+               ngModel
+               name="email"
+               required
+               email
+               #emailInput="ngModel">
+      </mat-form-field>
+      <div class="error" [class.hide]="emailInput.untouched || emailInput.valid">
+        Email is required!
+      </div>
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"
+               ngModel
+               name="password"
+               required
+               #passwordInput="ngModel">
+        <button mat-icon-button matSuffix id="register-button" (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide" type="button">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="error" [class.hide]="passwordInput.untouched || passwordInput.valid">
+        Password is required!
+      </div>
+      <button mat-icon-button matS type="submit" [disabled]="!singUpForm.valid">
+        <mat-icon aria-hidden="false">pets</mat-icon>
+        Register
+      </button>
+    </div>
+    <button mat-button type="button" routerLink="../login" id="switchToLogin">Switch to Login</button>
+  </form>
+</div>
