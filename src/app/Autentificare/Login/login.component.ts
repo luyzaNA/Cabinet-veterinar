@@ -5,6 +5,7 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {MatInput} from "@angular/material/input";
+import {NavBarComponent} from "../../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ import {MatInput} from "@angular/material/input";
     RouterLink,
     MatIconButton,
     MatInput,
-    MatSuffix
+    MatSuffix,
+    NavBarComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

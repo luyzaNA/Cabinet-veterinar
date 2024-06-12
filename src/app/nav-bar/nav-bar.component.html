@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <button mat-icon-button color="primary"
+          aria-label="Example icon button with a home icon"
+          routerLink="../first-page">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="accountMenu" color="primary" aria-label="Example icon button with an account icon">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button color="primary"
+          aria-label="Example icon button with a help icon"
+          (click)="openGmail()">
+    <mat-icon>live_help</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" color="primary" aria-label="Example icon button with a menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #accountMenu="matMenu">
+  <button mat-menu-item>Profil</button>
+  <button mat-menu-item>Setari</button>
+  <button mat-menu-item>Logout</button>
+</mat-menu>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Programi</button>
+  <button mat-menu-item>Clinici</button>
+  <button mat-menu-item>Programarile mele</button>
+</mat-menu>
