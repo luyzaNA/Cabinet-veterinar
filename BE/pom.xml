@@ -30,6 +30,7 @@
   </modules>
 
   <dependencyManagement>
+
     <dependencies>
       <dependency>
         <groupId>ro.ZYMinds</groupId>
@@ -52,6 +53,20 @@
         <version>${project.version}</version>
       </dependency>
 
+
+      <!-- JWT (JSON Web Token) -->
+<!--      <dependency>-->
+<!--        <groupId>io.jsonwebtoken</groupId>-->
+<!--        <artifactId>jjwt</artifactId>-->
+<!--        <version>${jjwt.version}</version>-->
+<!--      </dependency>-->
+
+      <!-- Hibernate Validator -->
+      <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>6.2.0.Final</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
