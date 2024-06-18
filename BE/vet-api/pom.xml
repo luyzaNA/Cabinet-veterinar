@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>ro.irian</groupId>
+    <groupId>ro.ZYMinds</groupId>
     <artifactId>ZYMinds-vetService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../../pom.xml</relativePath>
+    <relativePath>..</relativePath>
   </parent>
 
   <artifactId>vet-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Veterinary API Module</name>
+  <name>vet-api</name>
   <description>Module containing API for veterinary services</description>
 
   <properties>

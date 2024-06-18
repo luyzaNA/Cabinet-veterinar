@@ -11,7 +11,7 @@
 
   <artifactId>vet-web-lib</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>vet-lib</name>
+  <name>vet-web-lib</name>
   <description>Module containing WEB-LIB for veterinary services</description>
 
   <properties>

@@ -11,7 +11,7 @@
 
   <artifactId>vet-web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>labs-2024</name>
+  <name>vet-web</name>
   <description>Module containing WEB for veterinary services</description>
 
   <properties>
