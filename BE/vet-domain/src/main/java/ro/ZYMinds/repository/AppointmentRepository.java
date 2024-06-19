@@ -22,6 +22,9 @@ public class AppointmentRepository {
       em.merge(appointment);
     }
   }
+  public Appointment update(Appointment appointment) {
+    return em.merge(appointment);
+  }
 }
 
 
