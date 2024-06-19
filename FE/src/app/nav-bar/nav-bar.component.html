@@ -18,13 +18,13 @@
 </mat-toolbar>
 
 <mat-menu #accountMenu="matMenu">
-  <button mat-menu-item>Profil</button>
+  <button mat-menu-item routerLink="../register">Profil</button>
   <button mat-menu-item>Setari</button>
   <button mat-menu-item>Logout</button>
 </mat-menu>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Programi</button>
-  <button mat-menu-item>Clinici</button>
-  <button mat-menu-item>Programarile mele</button>
+  <button mat-menu-item routerLink="/services">Creeaza serviciu</button>
+  <button mat-menu-item routerLink="/services-list">Lista servicii</button>
+  <button mat-menu-item routerLink="/appointment">Programari</button>
 </mat-menu>

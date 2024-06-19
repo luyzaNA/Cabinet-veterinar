@@ -8,6 +8,7 @@ export interface CurrencyValue {
   value: number;
 }
 export interface MedicalOperationI {
+
   id: string;
   name: string;
   price: CurrencyValue;
