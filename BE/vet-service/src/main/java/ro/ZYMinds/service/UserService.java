@@ -23,7 +23,6 @@ public class UserService {
     return user.getId();
   }
 
-  @Transactional()
   public User findUserByEmail(String email) {
     return userRepository.findByEmail(email);
   }
