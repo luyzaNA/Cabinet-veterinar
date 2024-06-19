@@ -6,7 +6,7 @@ import java.util.List;
 public class AppointmentDto {
 
   private Long id;
-  private AnimalDto animal;
+  private String animalName;
   private DoctorDto doctor;
   private List<MedicalOperationDto> services;
   private AnimalDiagnosticDto diagnostic;
@@ -16,9 +16,9 @@ public class AppointmentDto {
   public AppointmentDto() {
   }
 
-  public AppointmentDto(Long id, AnimalDto animal, DoctorDto doctor, List<MedicalOperationDto> services, AnimalDiagnosticDto diagnostic, LocalDateTime appointmentDateTime, String status) {
+  public AppointmentDto(Long id, String animalName, DoctorDto doctor, List<MedicalOperationDto> services, AnimalDiagnosticDto diagnostic, LocalDateTime appointmentDateTime, String status) {
     this.id = id;
-    this.animal = animal;
+    this.animalName = animalName;
     this.doctor = doctor;
     this.services = services;
     this.diagnostic = diagnostic;
@@ -33,12 +33,12 @@ public class AppointmentDto {
     this.id = id;
   }
 
-  public AnimalDto getAnimal() {
-    return animal;
+  public String getAnimalName() {
+    return animalName;
   }
 
-  public void setAnimal(AnimalDto animal) {
-    this.animal = animal;
+  public void setAnimalName(String animalName) {
+    this.animalName = animalName;
   }
 
   public DoctorDto getDoctor() {

@@ -6,6 +6,8 @@ import ro.ZYMinds.dto.MedicalOperationDto;
 import ro.ZYMinds.entitity.MedicalOperation;
 import ro.ZYMinds.repository.MedicalOperationRepository;
 
+import java.util.List;
+
 @Service
 public class MedicalOperationService {
 
@@ -16,18 +18,32 @@ public class MedicalOperationService {
   }
 
   public MedicalOperation findMedicalOperationById(Long id) {
-          return medicalOperationRepository.findById(id);
+    return medicalOperationRepository.findById(id);
+  }
+
+  public MedicalOperation findMedicalOperationByName(String name) {
+    return medicalOperationRepository.findByName(name);
   }
 
   @Transactional
-  public Long saveMedicalOperation(MedicalOperationDto medicalOperationDto) {
+  public MedicalOperation saveMedicalOperation(MedicalOperationDto medicalOperationDto) {
+    String name = medicalOperationDto.getName();
+    MedicalOperation existingMedicalOperation = findMedicalOperationByName(name);
+
+    if (existingMedicalOperation != null) {
+      throw new RuntimeException("A medical operation with the same name already exists: " + name);
+    }
+
     MedicalOperation medicalOperation = new MedicalOperation(
-      medicalOperationDto.getName(),
-      medicalOperationDto.getPrice()
+            medicalOperationDto.getName(),
+            medicalOperationDto.getPrice()
     );
+
     medicalOperationRepository.save(medicalOperation);
-    return medicalOperation.getId();
+    return medicalOperation;
   }
 
-
+  public List<MedicalOperation> getAllMedicalOperations() {
+    return medicalOperationRepository.findAll();
+  }
 }

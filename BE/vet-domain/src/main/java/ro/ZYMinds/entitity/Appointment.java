@@ -1,6 +1,8 @@
 package ro.ZYMinds.entitity;
 
 import jakarta.persistence.*;
+
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,9 +17,8 @@ public class Appointment {
   @Version
   private Long version;
 
-  @ManyToOne
-  @JoinColumn(name = "animal_id", nullable = false)
-  private Animal animal;
+  @Column(name = "animal_name", nullable = false)
+  private String animalName;
 
   @ManyToOne
   @JoinColumn(name = "doctor_id", nullable = false)
@@ -25,9 +26,9 @@ public class Appointment {
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
-    name = "appointment_services",
-    joinColumns = @JoinColumn(name = "appointment_id"),
-    inverseJoinColumns = @JoinColumn(name = "service_id")
+          name = "appointment_services",
+          joinColumns = @JoinColumn(name = "appointment_id"),
+          inverseJoinColumns = @JoinColumn(name = "service_id")
   )
   private List<MedicalOperation> services;
 
@@ -44,8 +45,8 @@ public class Appointment {
   public Appointment() {
   }
 
-  public Appointment(Animal animal, Doctor doctor, List<MedicalOperation> services, AnimalDiagnostic diagnostic, LocalDateTime appointmentDateTime, String status) {
-    this.animal = animal;
+  public Appointment(String animalName, Doctor doctor, List<MedicalOperation> services, AnimalDiagnostic diagnostic, LocalDateTime appointmentDateTime, String status) {
+    this.animalName = animalName;
     this.doctor = doctor;
     this.services = services;
     this.diagnostic = diagnostic;
@@ -57,16 +58,17 @@ public class Appointment {
     return id;
   }
 
+
   public Long getVersion() {
     return version;
   }
 
-  public Animal getAnimal() {
-    return animal;
+  public String getAnimalName() {
+    return animalName;
   }
 
-  public void setAnimal(Animal animal) {
-    this.animal = animal;
+  public void setAnimalName(String animalName) {
+    this.animalName = animalName;
   }
 
   public Doctor getDoctor() {

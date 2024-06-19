@@ -8,19 +8,21 @@ export interface CurrencyValue {
   value: number;
 }
 export interface MedicalOperationI {
-  medicalOperationId: string;
-  medicalOperationName: string;
-  medicalOperationPrice: CurrencyValue;
+
+  id: string;
+  name: string;
+  price: CurrencyValue;
 }
 
 export class MedicalOperation implements MedicalOperationI {
-  medicalOperationId: string;
-  medicalOperationName: string;
-  medicalOperationPrice: CurrencyValue;
+  id: string;
+  name: string;
+  price: CurrencyValue;
 
-  constructor(medicalOperationId: string, medicalOperationName: string, medicalOperationPrice: CurrencyValue) {
-    this.medicalOperationId = medicalOperationId;
-    this.medicalOperationName = medicalOperationName;
-    this.medicalOperationPrice = medicalOperationPrice;
+  constructor(id: string, name: string, price: CurrencyValue) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
   }
 }
+

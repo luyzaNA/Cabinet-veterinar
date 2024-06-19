@@ -1,6 +1,5 @@
 package ro.ZYMinds.entitity;
 
-
 import jakarta.persistence.*;
 
 @Entity
