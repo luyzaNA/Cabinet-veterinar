@@ -42,7 +42,7 @@ export class ServiceComponent {
         this.resetFields();
       }, error => {
         console.error('Error saving medical operation', error);
-        alert(" Eroare la salvarea serviciului medical")
+        alert("")
       });
   }
 

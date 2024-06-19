@@ -6,6 +6,8 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import ro.ZYMinds.entitity.MedicalOperation;
 
+import java.util.List;
+
 @Repository
 public class MedicalOperationRepository {
 
@@ -32,5 +34,9 @@ public class MedicalOperationRepository {
     } else {
       em.merge(medicalOperation);
     }
+  }
+  public List<MedicalOperation> findAll() {
+    return em.createQuery("SELECT m FROM MedicalOperation m", MedicalOperation.class)
+            .getResultList();
   }
 }

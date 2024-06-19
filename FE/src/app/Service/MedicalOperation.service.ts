@@ -15,6 +15,8 @@ export class MedicalOperationService {
   createMedicalOperation(name:string, price:CurrencyValue): Observable<MedicalOperationI> {
     return this.http.post<MedicalOperationI>(`${environment.apiUrl}/operation`, {name, price});
   }
-
+  getAllMedicalOperations(): Observable<MedicalOperationI[]> {
+    return this.http.get<MedicalOperationI[]>(`${environment.apiUrl}/operation`);
+  }
 }
 
