@@ -6,6 +6,8 @@ import ro.ZYMinds.dto.MedicalOperationDto;
 import ro.ZYMinds.entitity.MedicalOperation;
 import ro.ZYMinds.repository.MedicalOperationRepository;
 
+import java.util.List;
+
 @Service
 public class MedicalOperationService {
 
@@ -29,8 +31,6 @@ public class MedicalOperationService {
     MedicalOperation existingMedicalOperation = findMedicalOperationByName(name);
 
     if (existingMedicalOperation != null) {
-      // Dacă există deja un serviciu medical cu același nume, poți decide să arunci o excepție sau să returnezi null sau să faci altă logică specifică aplicației tale
-      // În exemplul de mai jos, aruncăm o excepție de tip RuntimeException.
       throw new RuntimeException("A medical operation with the same name already exists: " + name);
     }
 
@@ -41,5 +41,9 @@ public class MedicalOperationService {
 
     medicalOperationRepository.save(medicalOperation);
     return medicalOperation;
+  }
+
+  public List<MedicalOperation> getAllMedicalOperations() {
+    return medicalOperationRepository.findAll();
   }
 }
