@@ -15,7 +15,6 @@ public class UserDto {
     this.email = email;
   }
 
-  // Getters and setters
   public String getName() {
     return name;
   }
@@ -31,6 +30,7 @@ public class UserDto {
   public void setPassword(String password) {
     this.password = password;
   }
+
   public String getEmail() {
     return email;
   }

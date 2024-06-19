@@ -9,7 +9,7 @@ import ro.ZYMinds.entitity.User;
 import ro.ZYMinds.service.UserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/user")
 public class UserController {
 
   private final UserService userService;
