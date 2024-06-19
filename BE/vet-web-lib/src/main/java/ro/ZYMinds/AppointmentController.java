@@ -33,5 +33,13 @@ public class AppointmentController {
     Long appointmentId = appointmentService.saveAppointment(appointmentDto);
     return ResponseEntity.status(HttpStatus.CREATED).body(appointmentId);
   }
-
+  @PutMapping("/{id}")
+  public ResponseEntity<Void> updateAppointment(@PathVariable Long id, @Valid @RequestBody AppointmentDto updatedAppointmentDto) {
+    try {
+      appointmentService.updateAppointment(id, updatedAppointmentDto);
+      return ResponseEntity.ok().build();
+    } catch (IllegalArgumentException e) {
+      return ResponseEntity.notFound().build();
+    }
+  }
 }

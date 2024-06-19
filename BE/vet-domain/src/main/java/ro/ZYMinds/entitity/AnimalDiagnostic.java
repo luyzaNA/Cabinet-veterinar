@@ -50,4 +50,8 @@ public class AnimalDiagnostic {
   public boolean isTransient() {
     return version == null;
   }
+
+  public void setId(Long id) {
+
+  }
 }
